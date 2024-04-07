@@ -9,7 +9,7 @@ Sumário:
 
 ## Instalação
 
-Para realizar a instalação das depêndencias do projeto utilize:
+Para realizar a instalação das dependências do projeto utilize:
 
 ```
 npm install
