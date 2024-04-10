@@ -11,11 +11,15 @@ const Colors = {
   lightYellow: "FFF5C2",
   red: "#E52207",
   lightRed: "#FDB8AE",
+  backgroundDarkBlue: "#04132A",
+  backgroundBlue: "#071D41",
+  transparent: "#0000000",
 
   //= ------------- Text colors -------------
   textBlack: "#333333",
   textBlue: "#1351B4",
   textLightBlue: "#C5D4EB",
+  hoverBlue: "#5992ED",
 };
 
 export default Colors;

@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.copyrightBackground {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.textStyle {
+  font-weight: 100;
+  text-align: center;
+  font-size: 13px;
+}
+
+.footerWrapper {
+  padding: 2rem;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: end;
+}

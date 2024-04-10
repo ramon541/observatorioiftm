@@ -1,0 +1,25 @@
+﻿.FonteLogo {
+    font-size: 20px;
+    color: black; /*white;*/
+    /*font-family: 'Fjalla One', sans-serif;*/
+}
+
+@media (max-width: 768px) {
+    .FonteLogo {
+        font-size: 16px;
+        color: black; 
+    }
+}
+
+.logo1 {
+    text-align: center;
+}
+
+.logo1 > .p-chart {
+    display: inline-block;
+    padding-top: 5px;
+}
+
+.logo2 > .p-chart {
+    margin: 0 auto;
+}
