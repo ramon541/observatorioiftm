@@ -2,6 +2,7 @@ import Colors from "../../styles/Colors";
 import { TextHover } from "../../styles/styled-components";
 import styles from "./styles.module.css";
 import AcessoAInformacao from "../../assets/icons/AcessoAInformacao";
+import ObservatorioIFTMLogo from "../ObservatorioIFTMLogo";
 
 export default function Footer() {
   return (
@@ -13,6 +14,7 @@ export default function Footer() {
         className={styles.footerWrapper}
       >
         <div className={styles.footerBottom}>
+          <ObservatorioIFTMLogo />
           <AcessoAInformacao
             cursor
             link={"https://www.gov.br/acessoainformacao/pt-br"}

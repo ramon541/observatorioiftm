@@ -3,11 +3,14 @@
 }
 
 #root {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   font: inherit;
   font-size: 100%;
   vertical-align: baseline;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 html,
