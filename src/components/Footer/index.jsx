@@ -1,26 +1,30 @@
 import Colors from "../../styles/Colors";
 import { TextHover } from "../../styles/styled-components";
-import styles from "./styles.module.css";
+import styles from "./index.module.css";
 import AcessoAInformacao from "../../assets/icons/AcessoAInformacao";
 import ObservatorioIFTMLogo from "../ObservatorioIFTMLogo";
 
 export default function Footer() {
-  return (
-    <div className={styles.wrapper}>
+  function renderFooter() {
+    return (
       <footer
         style={{
           backgroundColor: Colors.backgroundBlue,
         }}
         className={styles.footerWrapper}
       >
-        <div className={styles.footerBottom}>
-          <ObservatorioIFTMLogo />
-          <AcessoAInformacao
-            cursor
-            link={"https://www.gov.br/acessoainformacao/pt-br"}
-          />
-        </div>
+        <ObservatorioIFTMLogo />
+        <AcessoAInformacao
+          cursor
+          link={"https://www.gov.br/acessoainformacao/pt-br"}
+        />
       </footer>
+    );
+  }
+
+  //=======================================================
+  function renderCopyright() {
+    return (
       <span
         className={styles.copyrightBackground}
         style={{ backgroundColor: Colors.backgroundDarkBlue }}
@@ -33,6 +37,14 @@ export default function Footer() {
           </TextHover>
         </p>
       </span>
+    );
+  }
+
+  //========================Return=========================
+  return (
+    <div className={styles.wrapper}>
+      {renderFooter()}
+      {renderCopyright()}
     </div>
   );
 }

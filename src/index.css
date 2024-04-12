@@ -99,3 +99,8 @@ video {
   padding: 0;
   border: 0;
 }
+
+a {
+  all: unset;
+  cursor: pointer;
+}

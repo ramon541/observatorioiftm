@@ -31,3 +31,19 @@ export const TextHover = styled.a`
     background: none;
   }
 `;
+
+export const ButtonIcon = styled.button`
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 1.25rem;
+  min-width: 1.25rem;
+  background-color: ${Colors.gray};
+  border-radius: 100vmax;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${Colors.lightBlue};
+  }
+`;

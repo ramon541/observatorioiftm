@@ -1,0 +1,36 @@
+.headerWrapper {
+  background: white;
+  box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: var(--header-padding) 0;
+  position: relative;
+  padding: 2rem;
+}
+
+.topHeaderWrapper {
+  display: flex;
+  flex: 8;
+}
+
+.topHeaderLeft {
+  display: flex;
+  align-items: center;
+  flex: 2;
+  margin-right: 1rem;
+}
+
+.topHeaderRight {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex: 6;
+}
+
+.bottomElementsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

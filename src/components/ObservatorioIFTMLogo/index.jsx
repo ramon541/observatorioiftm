@@ -1,8 +1,9 @@
 ﻿import React from "react";
 import { Chart } from "primereact/chart";
+import { Link } from "react-router-dom";
 import styles from "./index.module.css";
 
-export default function ObservatorioIFTMLogo() {
+export default function ObservatorioIFTMLogo({ black }) {
   const optionsO = {
     title: {
       display: false,
@@ -13,7 +14,6 @@ export default function ObservatorioIFTMLogo() {
     },
   };
   const dataOGrande = {
-    labels: ["A", "B", "C"],
     datasets: [
       {
         data: [200, 70, 100],
@@ -24,7 +24,7 @@ export default function ObservatorioIFTMLogo() {
   };
 
   return (
-    <div>
+    <Link to="/">
       <div className={styles.logo1}>
         <Chart
           style={{ marginTop: "-16px" }}
@@ -34,12 +34,19 @@ export default function ObservatorioIFTMLogo() {
           data={dataOGrande}
           options={optionsO}
         />
-        <span className={styles.FonteLogo}>bservatório</span>
-        <span className={styles.FonteLogo}>
-          {" "}
-          <strong>IFTM</strong>
-        </span>
+        <div
+          style={{
+            fontSize: "20px",
+            color: black ? "black" : "white",
+          }}
+        >
+          <span>bservatório</span>
+          <span>
+            {" "}
+            <strong>IFTM</strong>
+          </span>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
