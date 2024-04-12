@@ -7,7 +7,7 @@ import Home from "../pages/Home";
 
 const routes = createBrowserRouter([
   {
-    path: "/",
+    path: "/observatorioiftm",
     element: <RootLayout />,
     children: [
       {
