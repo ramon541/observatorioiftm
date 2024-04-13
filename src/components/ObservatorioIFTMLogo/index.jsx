@@ -1,9 +1,9 @@
-﻿import React from "react";
+﻿import React, { memo } from "react";
 import { Chart } from "primereact/chart";
 import { Link } from "react-router-dom";
 import styles from "./index.module.css";
 
-export default function ObservatorioIFTMLogo({ black }) {
+export default memo(function ObservatorioIFTMLogo({ black }) {
   const optionsO = {
     title: {
       display: false,
@@ -24,7 +24,7 @@ export default function ObservatorioIFTMLogo({ black }) {
   };
 
   return (
-    <Link to="/">
+    <Link to="/observatorioiftm">
       <div className={styles.logo1}>
         <Chart
           style={{ marginTop: "-16px" }}
@@ -49,4 +49,4 @@ export default function ObservatorioIFTMLogo({ black }) {
       </div>
     </Link>
   );
-}
+});

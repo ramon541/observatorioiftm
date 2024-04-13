@@ -1,10 +1,14 @@
 import styles from "./index.module.css";
 
 import ButtonIcon from "../ButtonIcon";
-
 import ObservatorioIFTMLogo from "../ObservatorioIFTMLogo";
+import Colors from "../../styles/Colors";
+
+import { useSharedMenu } from "../../hooks";
 
 export default function Header({ page }) {
+  const { menu, openMenu, closeMenu } = useSharedMenu();
+
   function renderTopElements() {
     return (
       <div className={styles.topHeaderWrapper}>
@@ -23,9 +27,12 @@ export default function Header({ page }) {
     return (
       <div className={styles.bottomElementsWrapper}>
         <div>
-          <ButtonIcon icon="fa-bars" />
+          <ButtonIcon
+            icon={menu ? "fa-xmark" : "fa-bars"}
+            onClick={menu ? closeMenu : openMenu}
+          />
         </div>
-        <h1 style={{ fontWeight: "normal" }}>{page}</h1>
+        <h2 style={{ fontWeight: "normal", color: Colors.textBlue }}>{page}</h2>
       </div>
     );
   }
