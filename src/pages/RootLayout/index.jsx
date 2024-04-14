@@ -15,7 +15,7 @@ export default function RootLayout() {
   useOnInit();
 
   //=======================================================
-  function renderMenu() {
+  function renderModalMenu() {
     return (
       menu && (
         <div
@@ -28,6 +28,7 @@ export default function RootLayout() {
         >
           <div
             style={{
+              backgroundColor: Colors.white,
               marginTop: `${height}vh`,
               height: `${100 - height}vh`,
               width: "20%",
@@ -55,10 +56,12 @@ export default function RootLayout() {
       <Header
         innerRef={ref}
         page={
-          location.pathname === "/observatorioiftm/" ? "Home" : "Outra rota"
+          location.pathname === "/observatorioiftm/"
+            ? "Home"
+            : location.pathname
         }
       />
-      {renderMenu()}
+      {renderModalMenu()}
       <div style={{ marginTop: `${height}vh` }}>
         <Outlet />
       </div>

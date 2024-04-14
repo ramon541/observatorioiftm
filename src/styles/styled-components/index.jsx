@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Colors from "../Colors";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   padding: ${(props) => (props.padding ? props.padding : "2em")};
@@ -33,7 +34,6 @@ export const TextHover = styled.a`
 `;
 
 export const ButtonIcon = styled.button`
-  all: unset;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +41,38 @@ export const ButtonIcon = styled.button`
   min-width: 1.25rem;
   background-color: ${Colors.gray};
   border-radius: 100vmax;
-  cursor: pointer;
+
+  &:hover {
+    background-color: ${Colors.lightBlue};
+  }
+`;
+
+export const OptionContainer = styled.button`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: ${(props) => (props.bg ? props.bg : "white")};
+  border: 1px solid transparent;
+  border-top: ${(props) =>
+    props.noBorder ? "1px solid transparent" : "1px solid #CCCCCC"};
+  color: ${Colors.textBlue};
+
+  &:hover {
+    background-color: ${Colors.lightBlue};
+  }
+`;
+
+export const LinkOptionContainer = styled(Link)`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: ${(props) => (props.noBorder ? "1rem 2rem 1rem 2rem" : "1rem")};
+  background-color: ${(props) => (props.bg ? props.bg : "white")};
+  border: 1px solid transparent;
+  border-top: ${(props) =>
+    props.noBorder ? "1px solid transparent" : "1px solid #CCCCCC"};
+  color: ${Colors.textBlue};
 
   &:hover {
     background-color: ${Colors.lightBlue};

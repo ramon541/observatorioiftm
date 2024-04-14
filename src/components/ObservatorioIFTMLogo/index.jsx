@@ -1,9 +1,9 @@
-﻿import React, { memo } from "react";
+﻿import { memo } from "react";
 import { Chart } from "primereact/chart";
 import { Link } from "react-router-dom";
 import styles from "./index.module.css";
 
-export default memo(function ObservatorioIFTMLogo({ black }) {
+export default memo(function ObservatorioIFTMLogo({ black, small }) {
   const optionsO = {
     title: {
       display: false,
@@ -28,15 +28,15 @@ export default memo(function ObservatorioIFTMLogo({ black }) {
       <div className={styles.logo1}>
         <Chart
           style={{ marginTop: "-16px" }}
-          width="40px"
-          height="40px"
+          width={small ? "35px" : "40px"}
+          height={small ? "35px" : "40px"}
           type="doughnut"
           data={dataOGrande}
           options={optionsO}
         />
         <div
           style={{
-            fontSize: "20px",
+            fontSize: small ? "16px" : "20px",
             color: black ? "black" : "white",
           }}
         >

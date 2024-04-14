@@ -16,7 +16,7 @@ export default function Header({ page, innerRef }) {
           <ObservatorioIFTMLogo black />
         </div>
         <div className={styles.topHeaderRight}>
-          <ButtonIcon icon="fa-user" label="Entrar" />
+          <ButtonIcon icon="fa-user" label="Login" />
         </div>
       </div>
     );
