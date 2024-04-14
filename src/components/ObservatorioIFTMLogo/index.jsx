@@ -24,7 +24,7 @@ export default memo(function ObservatorioIFTMLogo({ black }) {
   };
 
   return (
-    <Link to="/observatorioiftm">
+    <Link to="/observatorioiftm/">
       <div className={styles.logo1}>
         <Chart
           style={{ marginTop: "-16px" }}

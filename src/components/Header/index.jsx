@@ -6,7 +6,7 @@ import Colors from "../../styles/Colors";
 
 import { useSharedMenu } from "../../hooks";
 
-export default function Header({ page }) {
+export default function Header({ page, innerRef }) {
   const { menu, openMenu, closeMenu } = useSharedMenu();
 
   function renderTopElements() {
@@ -38,7 +38,7 @@ export default function Header({ page }) {
   }
   //========================Return=========================
   return (
-    <header className={styles.headerWrapper}>
+    <header ref={innerRef} className={styles.headerWrapper}>
       {renderTopElements()}
       {renderBottomElements()}
     </header>

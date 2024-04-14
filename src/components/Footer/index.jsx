@@ -40,7 +40,7 @@ export default function Footer() {
     );
   }
 
-  //========================Return=========================
+  //=========================Return=========================
   return (
     <div className={styles.wrapper}>
       {renderFooter()}

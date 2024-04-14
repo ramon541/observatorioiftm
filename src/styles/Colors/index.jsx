@@ -14,6 +14,7 @@ const Colors = {
   backgroundDarkBlue: "#04132A",
   backgroundBlue: "#071D41",
   transparent: "#0000000",
+  fadeBackground: "#00000075",
 
   //= ------------- Text colors -------------
   textBlack: "#333333",

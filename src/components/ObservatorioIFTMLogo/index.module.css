@@ -1,6 +1,7 @@
 ﻿.logo1 {
   text-align: center;
   display: flex;
+  z-index: 0;
 }
 
 .logo1 > .p-chart {

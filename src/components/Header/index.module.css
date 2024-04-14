@@ -6,8 +6,10 @@
   justify-content: center;
   gap: 1rem;
   padding: var(--header-padding) 0;
-  position: relative;
+  position: fixed;
   padding: 2rem;
+  width: 100%;
+  z-index: 2;
 }
 
 .topHeaderWrapper {
