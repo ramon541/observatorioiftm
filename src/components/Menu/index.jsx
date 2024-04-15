@@ -1,7 +1,7 @@
 import Colors from "../../styles/Colors";
 
 import ObservatorioIFTMLogo from "../ObservatorioIFTMLogo";
-import MenuOption from "./MenuOption";
+import MenuOptions from "./MenuOptions";
 
 export default function Menu() {
   const options = [
@@ -89,25 +89,13 @@ export default function Menu() {
 
   function renderOptions() {
     return options.map((option, index) => (
-      <>
-        <MenuOption
-          label={option.label}
-          icon={option.icon}
-          arrow={option.menus === null ? null : "down"}
-          link={option.route ?? null}
-          key={index}
-        />
-        {option?.menus?.length > 0 &&
-          option.menus.map((menuOption, index) => (
-            <MenuOption
-              label={menuOption.label}
-              icon={menuOption.icon}
-              link={menuOption.route}
-              key={index * 10}
-              noBorder
-            />
-          ))}
-      </>
+      <MenuOptions
+        label={option.label}
+        icon={option.icon}
+        link={option.route ?? null}
+        data={option?.menus?.length > 0 ? option?.menus : null}
+        key={index}
+      />
     ));
   }
 

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./index.module.css";
 
 import ButtonIcon from "../ButtonIcon";
@@ -16,7 +17,9 @@ export default function Header({ page, innerRef }) {
           <ObservatorioIFTMLogo black />
         </div>
         <div className={styles.topHeaderRight}>
-          <ButtonIcon icon="fa-user" label="Login" />
+          <Link to="login">
+            <ButtonIcon icon="fa-user" label="Login" />
+          </Link>
         </div>
       </div>
     );
