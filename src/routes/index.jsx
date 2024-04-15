@@ -14,6 +14,7 @@ import ConsultaTemasPesquisa from "../pages/ConsultaTemasPesquisa";
 import ProducaoCientifica from "../pages/ProducaoCientifica";
 import AvaliacaoPesquisador from "../pages/AvaliacaoPesquisador";
 import Login from "../pages/Login";
+import Sobre from "../pages/Sobre";
 
 const routes = createBrowserRouter([
   {
@@ -63,6 +64,10 @@ const routes = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+      },
+      {
+        path: "sobre",
+        element: <Sobre />,
       },
     ],
   },

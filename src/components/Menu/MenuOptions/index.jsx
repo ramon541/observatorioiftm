@@ -63,18 +63,5 @@ export default memo(function MenuOptions({ label, icon, link, data }) {
           );
         })}
     </>
-    // <LinkOptionContainer to={link}>
-    //   <div
-    //     style={{
-    //       display: "flex",
-    //       alignItems: "center",
-    //       gap: "1rem",
-    //       width: "100%",
-    //     }}
-    //   >
-    //     <div className={`fa-solid ${icon}`} />
-    //     <p>{label}</p>
-    //   </div>
-    // </LinkOptionContainer>
   );
 });
