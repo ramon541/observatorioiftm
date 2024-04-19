@@ -3,8 +3,10 @@ import {
   CardContainer,
   CentralContainer,
 } from "../../styles/styled-components";
+import Colors from "../../styles/Colors";
+import ButtonIcon from "../ButtonIcon";
 
-export default function Card() {
+export default function Card({ name, image, openInfo, children, justifyLeft }) {
   return (
     <CardContainer gap={1}>
       <div
@@ -16,23 +18,24 @@ export default function Card() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center" }}>
-          <h2>Card</h2>
+          {image && (
+            <img
+              style={{
+                height: "2.25rem",
+                objectFit: "contain",
+                marginRight: "1rem",
+              }}
+              src={image}
+            />
+          )}
+          <h3 style={{ color: Colors.textBlue }}>{name}</h3>
         </div>
-        <p>X</p>
+        {openInfo && (
+          <ButtonIcon onClick={openInfo} icon={"fa-circle-question"} />
+        )}
       </div>
-      <CentralContainer>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe earum
-          rerum molestias corrupti non qui quo a pariatur quis? Aspernatur
-          incidunt neque laboriosam veritatis ratione ex, minus illo nesciunt
-          deleniti. Deserunt labore neque illo, voluptates ullam excepturi omnis
-          vero dolorum, eveniet amet porro quos impedit beatae dolore non nisi
-          cupiditate aliquid. Vitae excepturi earum expedita magnam corporis
-          quas, non repellendus. Vel laudantium a ratione nam voluptatum itaque
-          minus, sapiente deleniti nostrum iste unde, voluptates iusto maiores
-          blanditiis culpa nulla inventore. Fuga quis repellat maxime hic odit
-          unde temporibus qui in?
-        </p>
+      <CentralContainer justifyContent={justifyLeft ? "flex-start" : null}>
+        {children}
       </CentralContainer>
     </CardContainer>
   );

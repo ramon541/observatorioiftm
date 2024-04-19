@@ -6,8 +6,7 @@ export const Container = styled.div`
   padding: ${(props) => (props.padding ? props.padding : "2rem")};
   display: flex;
   flex-direction: column;
-  align-items: ${(props) =>
-    props.alignItem ? props.alignItem : "start"};
+  align-items: ${(props) => (props.alignItem ? props.alignItem : "start")};
 `;
 
 export const TextHover = styled.a`
@@ -84,19 +83,40 @@ export const LinkOptionContainer = styled(Link)`
     background-color: ${Colors.lightBlue};
   }
 `;
+export const CustomLink = styled(Link)`
+  color: ${Colors.textBlue};
+  &:hover {
+    color: ${Colors.textLightBlue};
+  }
+`;
+
+export const CustomAnchor = styled.a`
+  color: ${Colors.textBlue};
+  &:hover {
+    color: ${Colors.textLightBlue};
+  }
+`;
 
 export const CardContainer = styled.div`
+  border: 2px solid transparent;
+  border-top: 2px solid ${Colors.blue};
   display: flex;
   flex-direction: column;
   background-color: ${Colors.white};
   box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.2);
   padding: 1rem;
   gap: ${(props) => (props.gap ? props.gap : "0")}rem;
+  min-width: ${(props) => (props.minWidth ? props.minWidth : "25rem")};
+  max-width: ${(props) => (props.maxWidth ? props.maxWidth : null)};
+  z-index: ${(props) => (props.zIndex ? props.zIndex : null)};
+  position: ${(props) => (props.position ? props.position : null)};
 `;
 
 export const CentralContainer = styled.div`
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  justify-content: ${(props) =>
+    props.justifyContent ? props.justifyContent : "center"};
   gap: ${(props) => (props.gap ? props.gap : "0")}rem;
 `;
