@@ -2,6 +2,7 @@ const Colors = {
   //= ------------- Surfaces colors -------------
   white: "#FFFFFF",
   gray: "#F8F8F8",
+  darkGray: "#666666",
   darkBlue: "#071D41",
   blue: "#155BCB",
   lightBlue: "#D4E5FF",

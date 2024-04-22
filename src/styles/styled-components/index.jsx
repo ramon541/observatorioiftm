@@ -120,3 +120,12 @@ export const CentralContainer = styled.div`
     props.justifyContent ? props.justifyContent : "center"};
   gap: ${(props) => (props.gap ? props.gap : "0")}rem;
 `;
+
+export const Title = styled.h1`
+  font-weight: 600;
+  color: ${Colors.textBlue};
+`;
+
+export const Small = styled.small`
+  color: ${(props) => (props.color ? props.color : Colors.darkGray)};
+`;

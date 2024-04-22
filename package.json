@@ -14,6 +14,9 @@
     "fastDeploy": "del build && del dist && yarn build && ren dist build && yarn deploy"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.15.15",
     "chart.js": "^4.4.2",
     "gh-pages": "^6.1.1",
     "primereact": "^10.6.3",

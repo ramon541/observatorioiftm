@@ -4,6 +4,7 @@ import {
   CentralContainer,
   CustomLink as Link,
   CustomAnchor as Anchor,
+  Title,
 } from "../../styles/styled-components";
 import Card from "../../components/Card";
 
@@ -67,9 +68,7 @@ export default memo(function Home() {
         </p>
       </Modal>
       <Container>
-        <h1 style={{ fontWeight: 600, color: Colors.textBlue }}>
-          Bem-vindo ao Observatório IFTM
-        </h1>
+        <Title>Bem-vindo ao Observatório IFTM</Title>
         <CentralContainer>
           <div style={CardsContainer}>
             <div
