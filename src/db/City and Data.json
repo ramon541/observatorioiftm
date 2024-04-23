@@ -1,0 +1,84 @@
+[
+  {
+    "cidade": { "id": 0, "nome": "Todos os Campus" },
+    "totalDocentes": 2635,
+    "docentesComLattes": 2579
+  },
+  {
+    "cidade": { "id": 1, "nome": "Apóstoles" },
+    "totalDocentes": 5,
+    "docentesComLattes": 244
+  },
+  {
+    "cidade": {
+      "id": 2,
+      "nome": "Géfyra"
+    },
+    "totalDocentes": 235,
+    "docentesComLattes": 456
+  },
+  {
+    "cidade": {
+      "id": 3,
+      "nome": "Sosnovyy Bor"
+    },
+    "totalDocentes": 181,
+    "docentesComLattes": 480
+  },
+  {
+    "cidade": {
+      "id": 4,
+      "nome": "General Alvear"
+    },
+    "totalDocentes": 348,
+    "docentesComLattes": 135
+  },
+  {
+    "cidade": {
+      "id": 5,
+      "nome": "Ormstown"
+    },
+    "totalDocentes": 564,
+    "docentesComLattes": 190
+  },
+  {
+    "cidade": {
+      "id": 6,
+      "nome": "Strabychovo"
+    },
+    "totalDocentes": 260,
+    "docentesComLattes": 199
+  },
+  {
+    "cidade": {
+      "id": 7,
+      "nome": "Laxou"
+    },
+    "totalDocentes": 28,
+    "docentesComLattes": 152
+  },
+  {
+    "cidade": {
+      "id": 8,
+      "nome": "Chunoyar"
+    },
+    "totalDocentes": 515,
+    "docentesComLattes": 67
+  },
+  {
+    "cidade": {
+      "id": 9,
+      "nome": "Nova Olímpia"
+    },
+    "totalDocentes": 216,
+    "docentesComLattes": 34
+  },
+  {
+    "cidade": {
+      "id": 10,
+      "nome": "Tolú"
+    },
+    "totalDocentes": 278,
+    "docentesComLattes": 378
+  }
+]

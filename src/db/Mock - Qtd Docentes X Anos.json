@@ -1,0 +1,72 @@
+{
+  "titulo": "Quantidade de Docentes por Ano e Categoria",
+  "eixos": {
+    "x": "Ano",
+    "y": "Quantidade"
+  },
+  "categorias": [
+    "Iniciação Científica",
+    "TCC - Graduação",
+    "TCC - Especialização",
+    "Mestrado",
+    "Doutorado"
+  ],
+  "dados": [
+    {
+      "ano": 2017,
+      "Iniciação Científica": 40,
+      "TCC - Graduação": 60,
+      "TCC - Especialização": 20,
+      "Mestrado": 30,
+      "Doutorado": 50
+    },
+    {
+      "ano": 2018,
+      "Iniciação Científica": 45,
+      "TCC - Graduação": 55,
+      "TCC - Especialização": 25,
+      "Mestrado": 35,
+      "Doutorado": 45
+    },
+    {
+      "ano": 2019,
+      "Iniciação Científica": 50,
+      "TCC - Graduação": 60,
+      "TCC - Especialização": 30,
+      "Mestrado": 40,
+      "Doutorado": 40
+    },
+    {
+      "ano": 2020,
+      "Iniciação Científica": 35,
+      "TCC - Graduação": 45,
+      "TCC - Especialização": 15,
+      "Mestrado": 25,
+      "Doutorado": 40
+    },
+    {
+      "ano": 2021,
+      "Iniciação Científica": 45,
+      "TCC - Graduação": 55,
+      "TCC - Especialização": 20,
+      "Mestrado": 30,
+      "Doutorado": 50
+    },
+    {
+      "ano": 2022,
+      "Iniciação Científica": 30,
+      "TCC - Graduação": 40,
+      "TCC - Especialização": 15,
+      "Mestrado": 35,
+      "Doutorado": 40
+    },
+    {
+      "ano": 2023,
+      "Iniciação Científica": 40,
+      "TCC - Graduação": 50,
+      "TCC - Especialização": 20,
+      "Mestrado": 30,
+      "Doutorado": 45
+    }
+  ]
+}

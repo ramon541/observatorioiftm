@@ -6,9 +6,16 @@ import {
 import Colors from "../../styles/Colors";
 import ButtonIcon from "../ButtonIcon";
 
-export default function Card({ name, image, openInfo, children, justifyLeft }) {
+export default function Card({
+  name,
+  image,
+  openInfo,
+  children,
+  justifyLeft,
+  width,
+}) {
   return (
-    <CardContainer gap={1}>
+    <CardContainer gap={1} width={width ? width : null}>
       <div
         style={{
           display: "flex",

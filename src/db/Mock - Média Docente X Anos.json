@@ -1,0 +1,72 @@
+{
+  "titulo": "Média de Publicações por Docente por Ano e Categoria",
+  "eixos": {
+    "x": "Ano",
+    "y": "Média"
+  },
+  "categorias": [
+    "Iniciação Científica",
+    "TCC - Graduação",
+    "TCC - Especialização",
+    "Mestrado",
+    "Doutorado"
+  ],
+  "dados": [
+    {
+      "ano": 2017,
+      "Iniciação Científica": 0.5,
+      "TCC - Graduação": 0.8,
+      "TCC - Especialização": 0.3,
+      "Mestrado": 0.6,
+      "Doutorado": 0.9
+    },
+    {
+      "ano": 2018,
+      "Iniciação Científica": 0.6,
+      "TCC - Graduação": 0.7,
+      "TCC - Especialização": 0.4,
+      "Mestrado": 0.7,
+      "Doutorado": 0.8
+    },
+    {
+      "ano": 2019,
+      "Iniciação Científica": 0.7,
+      "TCC - Graduação": 0.75,
+      "TCC - Especialização": 0.45,
+      "Mestrado": 0.8,
+      "Doutorado": 0.7
+    },
+    {
+      "ano": 2020,
+      "Iniciação Científica": 0.4,
+      "TCC - Graduação": 0.6,
+      "TCC - Especialização": 0.2,
+      "Mestrado": 0.5,
+      "Doutorado": 0.9
+    },
+    {
+      "ano": 2021,
+      "Iniciação Científica": 0.7,
+      "TCC - Graduação": 0.8,
+      "TCC - Especialização": 0.4,
+      "Mestrado": 0.9,
+      "Doutorado": 0.6
+    },
+    {
+      "ano": 2022,
+      "Iniciação Científica": 0.5,
+      "TCC - Graduação": 0.7,
+      "TCC - Especialização": 0.3,
+      "Mestrado": 0.8,
+      "Doutorado": 0.8
+    },
+    {
+      "ano": 2023,
+      "Iniciação Científica": 0.6,
+      "TCC - Graduação": 0.7,
+      "TCC - Especialização": 0.2,
+      "Mestrado": 0.9,
+      "Doutorado": 0.7
+    }
+  ]
+}

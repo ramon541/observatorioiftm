@@ -1,0 +1,72 @@
+{
+  "titulo": "Percentual de Docentes por Ano e Categoria",
+  "eixos": {
+    "x": "Ano",
+    "y": "Percentual"
+  },
+  "categorias": [
+    "Iniciação Científica",
+    "TCC - Graduação",
+    "TCC - Especialização",
+    "Mestrado",
+    "Doutorado"
+  ],
+  "dados": [
+    {
+      "ano": 2017,
+      "Iniciação Científica": "16%",
+      "TCC - Graduação": "24%",
+      "TCC - Especialização": "8%",
+      "Mestrado": "12%",
+      "Doutorado": "20%"
+    },
+    {
+      "ano": 2018,
+      "Iniciação Científica": "18%",
+      "TCC - Graduação": "22%",
+      "TCC - Especialização": "10%",
+      "Mestrado": "14%",
+      "Doutorado": "18%"
+    },
+    {
+      "ano": 2019,
+      "Iniciação Científica": "20%",
+      "TCC - Graduação": "24%",
+      "TCC - Especialização": "12%",
+      "Mestrado": "16%",
+      "Doutorado": "16%"
+    },
+    {
+      "ano": 2020,
+      "Iniciação Científica": "14%",
+      "TCC - Graduação": "18%",
+      "TCC - Especialização": "6%",
+      "Mestrado": "10%",
+      "Doutorado": "16%"
+    },
+    {
+      "ano": 2021,
+      "Iniciação Científica": "18%",
+      "TCC - Graduação": "22%",
+      "TCC - Especialização": "8%",
+      "Mestrado": "12%",
+      "Doutorado": "20%"
+    },
+    {
+      "ano": 2022,
+      "Iniciação Científica": "12%",
+      "TCC - Graduação": "16%",
+      "TCC - Especialização": "6%",
+      "Mestrado": "14%",
+      "Doutorado": "16%"
+    },
+    {
+      "ano": 2023,
+      "Iniciação Científica": "16%",
+      "TCC - Graduação": "20%",
+      "TCC - Especialização": "8%",
+      "Mestrado": "12%",
+      "Doutorado": "18%"
+    }
+  ]
+}

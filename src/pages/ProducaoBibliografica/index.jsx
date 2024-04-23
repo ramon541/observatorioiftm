@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container } from "../../styles/styled-components";
+import { Container, Hr } from "../../styles/styled-components";
 import Card from "../../components/Card";
 import Campus from "./Campus";
 import Periodo from "./Periodo";
@@ -15,8 +15,15 @@ export default function ProducaoBibliografica() {
   const [opcao, setOpcao] = useState("campus");
   return (
     <Container>
-      <div style={{ width: "50%", marginBottom: "2rem" }}>
-        <Card name={"Selecione o tipo de consulta:"} justifyLeft>
+      <div
+        style={{
+          width: "100%",
+          marginBottom: "1rem",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Card name={"Selecione o tipo de consulta:"} width={"75%"}>
           <FormControl>
             <RadioGroup
               row
@@ -42,9 +49,12 @@ export default function ProducaoBibliografica() {
           </FormControl>
         </Card>
       </div>
-      {opcao === "campus" && <Campus />}
-      {opcao === "periodo" && <Periodo />}
-      {opcao === "docente" && <Docente />}
+      <Hr />
+      <div style={{ width: "100%" }}>
+        {opcao === "campus" && <Campus />}
+        {opcao === "periodo" && <Periodo />}
+        {opcao === "docente" && <Docente />}
+      </div>
     </Container>
   );
 }

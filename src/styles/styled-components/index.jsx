@@ -108,6 +108,7 @@ export const CardContainer = styled.div`
   gap: ${(props) => (props.gap ? props.gap : "0")}rem;
   min-width: ${(props) => (props.minWidth ? props.minWidth : "25rem")};
   max-width: ${(props) => (props.maxWidth ? props.maxWidth : null)};
+  width: ${(props) => (props.width ? props.width : null)};
   z-index: ${(props) => (props.zIndex ? props.zIndex : null)};
   position: ${(props) => (props.position ? props.position : null)};
 `;
@@ -123,9 +124,26 @@ export const CentralContainer = styled.div`
 
 export const Title = styled.h1`
   font-weight: 600;
-  color: ${Colors.textBlue};
+  color: ${(props) => (props.color ? props.color : Colors.textBlue)};
+`;
+
+export const SecondTitle = styled.h2`
+  font-weight: 600;
+  color: ${(props) => (props.color ? props.color : Colors.textBlue)};
+`;
+
+export const ThirdTitle = styled.h3`
+  font-weight: 600;
+  color: ${(props) => (props.color ? props.color : Colors.textBlue)};
 `;
 
 export const Small = styled.small`
   color: ${(props) => (props.color ? props.color : Colors.darkGray)};
+`;
+
+export const Hr = styled.hr`
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  border: 1px solid ${Colors.blue};
 `;

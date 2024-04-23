@@ -1,0 +1,72 @@
+{
+  "titulo": "Distribuição de Trabalhos por Ano e Categoria",
+  "eixos": {
+    "x": "Ano",
+    "y": "Quantidade"
+  },
+  "categorias": [
+    "Iniciação Científica",
+    "TCC - Graduação",
+    "TCC - Especialização",
+    "Mestrado",
+    "Doutorado"
+  ],
+  "dados": [
+    {
+      "ano": 2017,
+      "Iniciação Científica": 120,
+      "TCC - Graduação": 180,
+      "TCC - Especialização": 60,
+      "Mestrado": 90,
+      "Doutorado": 150
+    },
+    {
+      "ano": 2018,
+      "Iniciação Científica": 135,
+      "TCC - Graduação": 165,
+      "TCC - Especialização": 80,
+      "Mestrado": 105,
+      "Doutorado": 120
+    },
+    {
+      "ano": 2019,
+      "Iniciação Científica": 150,
+      "TCC - Graduação": 150,
+      "TCC - Especialização": 90,
+      "Mestrado": 120,
+      "Doutorado": 90
+    },
+    {
+      "ano": 2020,
+      "Iniciação Científica": 100,
+      "TCC - Graduação": 120,
+      "TCC - Especialização": 40,
+      "Mestrado": 80,
+      "Doutorado": 160
+    },
+    {
+      "ano": 2021,
+      "Iniciação Científica": 140,
+      "TCC - Graduação": 130,
+      "TCC - Especialização": 70,
+      "Mestrado": 110,
+      "Doutorado": 100
+    },
+    {
+      "ano": 2022,
+      "Iniciação Científica": 80,
+      "TCC - Graduação": 110,
+      "TCC - Especialização": 50,
+      "Mestrado": 120,
+      "Doutorado": 140
+    },
+    {
+      "ano": 2023,
+      "Iniciação Científica": 90,
+      "TCC - Graduação": 100,
+      "TCC - Especialização": 30,
+      "Mestrado": 130,
+      "Doutorado": 150
+    }
+  ]
+}
