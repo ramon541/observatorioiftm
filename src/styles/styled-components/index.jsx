@@ -115,6 +115,7 @@ export const CardContainer = styled.div`
 
 export const CentralContainer = styled.div`
   width: 100%;
+  flex-direction: column;
   display: flex;
   justify-content: center;
   justify-content: ${(props) =>

@@ -5,68 +5,68 @@
     "y": "Quantidade"
   },
   "categorias": [
-    "Iniciação Científica",
-    "TCC - Graduação",
-    "TCC - Especialização",
-    "Mestrado",
-    "Doutorado"
+    "Artigo Completo em Evento",
+    "Resumo em Evento",
+    "Artigo em Periódico",
+    "Capítulo de Livro",
+    "Livro"
   ],
   "dados": [
     {
       "ano": 2017,
-      "Iniciação Científica": 40,
-      "TCC - Graduação": 60,
-      "TCC - Especialização": 20,
-      "Mestrado": 30,
-      "Doutorado": 50
+      "Artigo Completo em Evento": 40,
+      "Resumo em Evento": 60,
+      "Artigo em Periódico": 20,
+      "Capítulo de Livro": 30,
+      "Livro": 50
     },
     {
       "ano": 2018,
-      "Iniciação Científica": 45,
-      "TCC - Graduação": 55,
-      "TCC - Especialização": 25,
-      "Mestrado": 35,
-      "Doutorado": 45
+      "Artigo Completo em Evento": 45,
+      "Resumo em Evento": 55,
+      "Artigo em Periódico": 25,
+      "Capítulo de Livro": 35,
+      "Livro": 45
     },
     {
       "ano": 2019,
-      "Iniciação Científica": 50,
-      "TCC - Graduação": 60,
-      "TCC - Especialização": 30,
-      "Mestrado": 40,
-      "Doutorado": 40
+      "Artigo Completo em Evento": 50,
+      "Resumo em Evento": 60,
+      "Artigo em Periódico": 30,
+      "Capítulo de Livro": 40,
+      "Livro": 40
     },
     {
       "ano": 2020,
-      "Iniciação Científica": 35,
-      "TCC - Graduação": 45,
-      "TCC - Especialização": 15,
-      "Mestrado": 25,
-      "Doutorado": 40
+      "Artigo Completo em Evento": 35,
+      "Resumo em Evento": 45,
+      "Artigo em Periódico": 15,
+      "Capítulo de Livro": 25,
+      "Livro": 40
     },
     {
       "ano": 2021,
-      "Iniciação Científica": 45,
-      "TCC - Graduação": 55,
-      "TCC - Especialização": 20,
-      "Mestrado": 30,
-      "Doutorado": 50
+      "Artigo Completo em Evento": 45,
+      "Resumo em Evento": 55,
+      "Artigo em Periódico": 20,
+      "Capítulo de Livro": 30,
+      "Livro": 50
     },
     {
       "ano": 2022,
-      "Iniciação Científica": 30,
-      "TCC - Graduação": 40,
-      "TCC - Especialização": 15,
-      "Mestrado": 35,
-      "Doutorado": 40
+      "Artigo Completo em Evento": 30,
+      "Resumo em Evento": 40,
+      "Artigo em Periódico": 15,
+      "Capítulo de Livro": 35,
+      "Livro": 40
     },
     {
       "ano": 2023,
-      "Iniciação Científica": 40,
-      "TCC - Graduação": 50,
-      "TCC - Especialização": 20,
-      "Mestrado": 30,
-      "Doutorado": 45
+      "Artigo Completo em Evento": 40,
+      "Resumo em Evento": 50,
+      "Artigo em Periódico": 20,
+      "Capítulo de Livro": 30,
+      "Livro": 45
     }
   ]
 }

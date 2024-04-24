@@ -8,20 +8,32 @@ import {
 import Card from "../../components/Card";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { ExpandMore } from "@mui/icons-material";
-import { getCitiesAndData } from "../../db";
+import {
+  getCitiesAndData,
+  getQtdxAnos,
+  getMediaDocxAnos,
+  getQtdDocentesxAnos,
+  getPercentDocentesxAnos,
+  getQtdxAnosA1,
+  getMediaProfxAnosA1,
+} from "../../db";
 import Modal from "../../components/Modal";
+import { Chart } from "primereact/chart";
 
 export default function Campus() {
   const { CityData } = getCitiesAndData();
+  const { QuantidadexAnos } = getQtdxAnos();
+  const { MediaDocentesxAnos } = getMediaDocxAnos();
+  const { QtdDocentesxAnos } = getQtdDocentesxAnos();
+  const { PDocentesxAnos } = getPercentDocentesxAnos();
+  const { QuantidadexAnosA1 } = getQtdxAnosA1();
+  const { MProfessorxAnosA1 } = getMediaProfxAnosA1();
   const [campus, setCampus] = useState(CityData[0].cidade.nome);
   const [data, setData] = useState(CityData[0]);
   const [modals, setModals] = useState({
     openModal1: false,
     openModal2: false,
     openModal3: false,
-    openModal4: false,
-    openModal5: false,
-    openModal6: false,
   });
 
   //=======================================================
@@ -41,23 +53,141 @@ export default function Campus() {
   }
 
   //=======================================================
+  const stackedOptionsUpdated = {
+    tooltips: {
+      mode: "index",
+      intersect: false,
+    },
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        stacked: true,
+      },
+      y: {
+        stacked: true,
+      },
+    },
+  };
+
+  //=======================================================
+  function renderChart(data) {
+    const newData = {
+      labels: data.dados.map((dado) => {
+        return dado.ano;
+      }),
+      datasets: data.categorias.map((categ) => {
+        return {
+          type: "bar",
+          label: categ,
+          barWidth: "1rem",
+          data: data.dados.map((dado) => {
+            return dado[categ];
+          }),
+        };
+      }),
+    };
+    return (
+      <Chart
+        style={{ width: "100%", minHeight: "25rem" }}
+        type="bar"
+        data={newData}
+        options={stackedOptionsUpdated}
+      />
+    );
+  }
+
+  //=======================================================
+  const text1 = (
+    <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+      <p>
+        <strong>Objetivo:</strong> Este indicador visa diagnosticar a producao
+        cientifica do docente. Os tipos de producao a serem consideradas sao:
+        artigo completo em evento; Resumo em evento; artigo em periodico;
+        capitulo de livro e livro.
+      </p>
+      <p>
+        <strong>Fonte dos dados:</strong> Docentes: Portal da Transparência do
+        Governo Federal com atualizacao anual. Producao: Plataforma Lattes
+      </p>
+      <Small>
+        Dados extraídos da Plataforma Lattes em <strong>28/12/2023</strong>
+      </Small>
+      <Small color="red">
+        Os estratos do Qualis Periódicos são do Quadriênio 2017-2020
+      </Small>
+    </div>
+  );
+
+  //=======================================================
+  const text2 = (
+    <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+      <p>
+        <strong>Objetivo:</strong> Este indicador visa diagnosticar a quantidade
+        de docentes que possuem alguma publicacao em periodicos, eventos, etc.
+      </p>
+      <p>
+        <strong>Fonte dos dados: </strong>
+        Docentes: Portal da Transparência do Governo Federal com atualizacao
+        anual. Producao: Plataforma Lattes e Periodicos Qualis CAPES:
+      </p>
+      <Small>
+        Dados extraídos da Plataforma Lattes em <strong>28/12/2023</strong>
+      </Small>
+      <Small color="red">
+        Os estratos do Qualis Periódicos são do Quadriênio 2017-2020
+      </Small>
+    </div>
+  );
+
+  //=======================================================
+  const text3 = (
+    <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+      <p>
+        <strong>Objetivo:</strong> Este indicador visa diagnosticar a producao
+        cientifica do docente apenas em periodicos. As quantidades sao separadas
+        pelos estratos dos periodicos.
+      </p>
+      <p>
+        <strong>Fonte dos dados: </strong>
+        Docentes: Portal da Transparência do Governo Federal com atualizacao
+        anual. Producao: Plataforma Lattes e Periodicos Qualis CAPES:
+      </p>
+      <Small>
+        Dados extraídos da Plataforma Lattes em <strong>28/12/2023</strong>
+      </Small>
+      <Small color="red">
+        Os estratos do Qualis Periódicos são do Quadriênio 2017-2020
+      </Small>
+    </div>
+  );
+
+  //=======================================================
   function renderModals() {
     return (
       <>
         <Modal
           isOpen={modals.openModal1}
           setModalOpen={() => toggleModal("openModal1")}
-          name="Sobre Atualização dos Dados"
+          name="Sobre Produção Bibliográfica"
         >
-          <p style={{ textAlign: "justify" }}>Oi 1</p>
+          <p style={{ textAlign: "justify" }}>{text1}</p>
         </Modal>
 
         <Modal
           isOpen={modals.openModal2}
           setModalOpen={() => toggleModal("openModal2")}
-          name="Sobre Atualização dos Dados"
+          name="Sobre Docentes com Produção Bibliográfica"
         >
-          <p style={{ textAlign: "justify" }}>Oi 2</p>
+          <p style={{ textAlign: "justify" }}>{text2}</p>
+        </Modal>
+
+        <Modal
+          isOpen={modals.openModal3}
+          setModalOpen={() => toggleModal("openModal3")}
+          name="Sobre Produção em Periódicos"
+        >
+          <p style={{ textAlign: "justify" }}>{text3}</p>
         </Modal>
       </>
     );
@@ -151,19 +281,40 @@ export default function Campus() {
             gap: "2rem",
           }}
         >
+          {/* --------------- Card 1 --------------- */}
           <Card
             width="100%"
             name="Produção Bibliográfica"
             openInfo={() => toggleModal("openModal1")}
           >
-            Oi 1
+            <div style={{ marginBottom: "1rem" }}>
+              <p style={{ textAlign: "center", marginBottom: "1rem" }}>
+                <strong>Quantidade x Anos</strong>
+              </p>
+              <p>
+                Clique no <strong> tipo de produção </strong> para inserir ou
+                remover a seleção:
+              </p>
+            </div>
+            <div>{renderChart(QuantidadexAnos)}</div>
           </Card>
+
+          {/* --------------- Card 2 --------------- */}
           <Card
             width="100%"
             name="Produção Bibliográfica"
             openInfo={() => toggleModal("openModal1")}
           >
-            Oi 2
+            <div style={{ marginBottom: "1rem" }}>
+              <p style={{ textAlign: "center", marginBottom: "1rem" }}>
+                <strong>Média por docente x Anos</strong>
+              </p>
+              <p>
+                Clique no <strong> tipo de produção </strong> para inserir ou
+                remover a seleção:
+              </p>
+            </div>
+            {renderChart(MediaDocentesxAnos)}
           </Card>
         </div>
         <div
@@ -174,19 +325,48 @@ export default function Campus() {
             gap: "2rem",
           }}
         >
+          {/* --------------- Card 3 --------------- */}
           <Card
             width="100%"
             name="Docentes Com Produção Bibliográfica"
             openInfo={() => toggleModal("openModal2")}
           >
-            Oi 3
+            <div style={{ marginBottom: "1rem" }}>
+              <p style={{ marginBottom: "1rem" }}>
+                Quantidade de docentes com no mínimo uma (1) produção
+                bibliográfica.
+              </p>
+              <p style={{ textAlign: "center", marginBottom: "1rem" }}>
+                <strong>Quantidade de Docentes x Anos</strong>
+              </p>
+              <p>
+                Clique no <strong> tipo de produção </strong> para inserir ou
+                remover a seleção:
+              </p>
+            </div>
+            {renderChart(QtdDocentesxAnos)}
           </Card>
+
+          {/* --------------- Card 4 --------------- */}
           <Card
             width="100%"
             name="Docentes Com Produção Bibliográfica"
             openInfo={() => toggleModal("openModal2")}
           >
-            Oi 4
+            <div style={{ marginBottom: "1rem" }}>
+              <p style={{ marginBottom: "1rem" }}>
+                Percentual de docentes em relação ao campus com no mínimo uma
+                (1) produção bibliográfica.
+              </p>
+              <p style={{ textAlign: "center", marginBottom: "1rem" }}>
+                <strong>Percentual de Docentes x Anos</strong>
+              </p>
+              <p>
+                Clique no <strong> tipo de produção </strong> para inserir ou
+                remover a seleção:
+              </p>
+            </div>
+            {renderChart(PDocentesxAnos)}
           </Card>
         </div>
         <div
@@ -197,19 +377,40 @@ export default function Campus() {
             gap: "2rem",
           }}
         >
+          {/* --------------- Card 5 --------------- */}
           <Card
             width="100%"
             name="Produção Em Periódicos"
-            openInfo={() => toggleModal("openModal2")}
+            openInfo={() => toggleModal("openModal3")}
           >
-            Oi 5
+            <div style={{ marginBottom: "1rem" }}>
+              <p style={{ textAlign: "center", marginBottom: "1rem" }}>
+                <strong>Quantidade x Anos</strong>
+              </p>
+              <p>
+                Clique no <strong>Estrato</strong> para inserir ou remover a
+                seleção:
+              </p>
+            </div>
+            {renderChart(QuantidadexAnosA1)}
           </Card>
+
+          {/* --------------- Card 6 --------------- */}
           <Card
             width="100%"
             name="Produção Em Periódicos"
-            openInfo={() => toggleModal("openModal2")}
+            openInfo={() => toggleModal("openModal3")}
           >
-            Oi 6
+            <div style={{ marginBottom: "1rem" }}>
+              <p style={{ textAlign: "center", marginBottom: "1rem" }}>
+                <strong>Média por professor x Anos</strong>
+              </p>
+              <p>
+                Clique no <strong>Estrato</strong> para inserir ou remover a
+                seleção:
+              </p>
+            </div>
+            {renderChart(MProfessorxAnosA1)}
           </Card>
         </div>
       </>

@@ -5,68 +5,68 @@
     "y": "Percentual"
   },
   "categorias": [
-    "Iniciação Científica",
-    "TCC - Graduação",
-    "TCC - Especialização",
-    "Mestrado",
-    "Doutorado"
+    "Artigo Completo em Evento",
+    "Resumo em Evento",
+    "Artigo em Periódico",
+    "Capítulo de Livro",
+    "Livro"
   ],
   "dados": [
     {
       "ano": 2017,
-      "Iniciação Científica": "16%",
-      "TCC - Graduação": "24%",
-      "TCC - Especialização": "8%",
-      "Mestrado": "12%",
-      "Doutorado": "20%"
+      "Artigo Completo em Evento": 16,
+      "Resumo em Evento": 24,
+      "Artigo em Periódico": 8,
+      "Capítulo de Livro": 12,
+      "Livro": 20
     },
     {
       "ano": 2018,
-      "Iniciação Científica": "18%",
-      "TCC - Graduação": "22%",
-      "TCC - Especialização": "10%",
-      "Mestrado": "14%",
-      "Doutorado": "18%"
+      "Artigo Completo em Evento": 18,
+      "Resumo em Evento": 22,
+      "Artigo em Periódico": 10,
+      "Capítulo de Livro": 14,
+      "Livro": 18
     },
     {
       "ano": 2019,
-      "Iniciação Científica": "20%",
-      "TCC - Graduação": "24%",
-      "TCC - Especialização": "12%",
-      "Mestrado": "16%",
-      "Doutorado": "16%"
+      "Artigo Completo em Evento": 20,
+      "Resumo em Evento": 24,
+      "Artigo em Periódico": 12,
+      "Capítulo de Livro": 16,
+      "Livro": 16
     },
     {
       "ano": 2020,
-      "Iniciação Científica": "14%",
-      "TCC - Graduação": "18%",
-      "TCC - Especialização": "6%",
-      "Mestrado": "10%",
-      "Doutorado": "16%"
+      "Artigo Completo em Evento": 14,
+      "Resumo em Evento": 18,
+      "Artigo em Periódico": 6,
+      "Capítulo de Livro": 10,
+      "Livro": 16
     },
     {
       "ano": 2021,
-      "Iniciação Científica": "18%",
-      "TCC - Graduação": "22%",
-      "TCC - Especialização": "8%",
-      "Mestrado": "12%",
-      "Doutorado": "20%"
+      "Artigo Completo em Evento": 18,
+      "Resumo em Evento": 22,
+      "Artigo em Periódico": 8,
+      "Capítulo de Livro": 12,
+      "Livro": 20
     },
     {
       "ano": 2022,
-      "Iniciação Científica": "12%",
-      "TCC - Graduação": "16%",
-      "TCC - Especialização": "6%",
-      "Mestrado": "14%",
-      "Doutorado": "16%"
+      "Artigo Completo em Evento": 12,
+      "Resumo em Evento": 16,
+      "Artigo em Periódico": 6,
+      "Capítulo de Livro": 14,
+      "Livro": 16
     },
     {
       "ano": 2023,
-      "Iniciação Científica": "16%",
-      "TCC - Graduação": "20%",
-      "TCC - Especialização": "8%",
-      "Mestrado": "12%",
-      "Doutorado": "18%"
+      "Artigo Completo em Evento": 16,
+      "Resumo em Evento": 20,
+      "Artigo em Periódico": 8,
+      "Capítulo de Livro": 12,
+      "Livro": 18
     }
   ]
 }
