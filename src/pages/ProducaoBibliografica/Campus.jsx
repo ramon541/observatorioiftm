@@ -53,25 +53,24 @@ export default function Campus() {
   }
 
   //=======================================================
-  const stackedOptionsUpdated = {
-    tooltips: {
-      mode: "index",
-      intersect: false,
-    },
-    responsive: true,
-    maintainAspectRatio: false,
-    scales: {
-      x: {
-        stacked: true,
-      },
-      y: {
-        stacked: true,
-      },
-    },
-  };
-
-  //=======================================================
   function renderChart(data) {
+    const stackedOptionsUpdated = {
+      tooltips: {
+        mode: "index",
+        intersect: false,
+      },
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          stacked: true,
+        },
+        y: {
+          stacked: true,
+        },
+      },
+    };
+
     const newData = {
       labels: data.dados.map((dado) => {
         return dado.ano;
@@ -80,7 +79,6 @@ export default function Campus() {
         return {
           type: "bar",
           label: categ,
-          barWidth: "1rem",
           data: data.dados.map((dado) => {
             return dado[categ];
           }),
@@ -296,7 +294,7 @@ export default function Campus() {
                 remover a seleção:
               </p>
             </div>
-            <div>{renderChart(QuantidadexAnos)}</div>
+            {renderChart(QuantidadexAnos)}
           </Card>
 
           {/* --------------- Card 2 --------------- */}

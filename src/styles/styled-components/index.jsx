@@ -117,7 +117,7 @@ export const CentralContainer = styled.div`
   width: 100%;
   flex-direction: column;
   display: flex;
-  justify-content: center;
+  align-items: ${(props) => (props.alignItems ? props.alignItems : "center")};
   justify-content: ${(props) =>
     props.justifyContent ? props.justifyContent : "center"};
   gap: ${(props) => (props.gap ? props.gap : "0")}rem;

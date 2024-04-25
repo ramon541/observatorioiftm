@@ -1,37 +1,25 @@
 import { useState } from "react";
-import { Small, ThirdTitle, Title } from "../../styles/styled-components";
+import {
+  Small,
+  Title,
+  SecondTitle,
+  ThirdTitle,
+} from "../../styles/styled-components";
 import Card from "../../components/Card";
-import {
-  Checkbox,
-  FormControl,
-  FormControlLabel,
-  FormGroup,
-} from "@mui/material";
-import { Chart } from "primereact/chart";
-import {
-  getMediaDocxAnos,
-  getMediaProfxAnosA1,
-  getPercentDocentesxAnos,
-  getQtdDocentesxAnos,
-  getQtdxAnos,
-  getQtdxAnosA1,
-} from "../../db";
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { ExpandMore } from "@mui/icons-material";
+import { getCitiesAndData, getQtdxAnos, getMediaDocxAnos } from "../../db";
 import Modal from "../../components/Modal";
+import { Chart } from "primereact/chart";
 
-export default function Periodo() {
+export default function Campus() {
+  const { CityData } = getCitiesAndData();
   const { QuantidadexAnos } = getQtdxAnos();
   const { MediaDocentesxAnos } = getMediaDocxAnos();
-  const { QtdDocentesxAnos } = getQtdDocentesxAnos();
-  const { PDocentesxAnos } = getPercentDocentesxAnos();
-  const { QuantidadexAnosA1 } = getQtdxAnosA1();
-  const { MProfessorxAnosA1 } = getMediaProfxAnosA1();
-
-  const years = ["2017", "2018", "2019", "2020", "2021", "2022", "2023"];
-  const [newYears, setNewYears] = useState([...years]);
+  const [campus, setCampus] = useState(CityData[0].cidade.nome);
+  const [data, setData] = useState(CityData[0]);
   const [modals, setModals] = useState({
     openModal1: false,
-    openModal2: false,
-    openModal3: false,
   });
 
   //=======================================================
@@ -43,14 +31,11 @@ export default function Periodo() {
   }
 
   //=======================================================
-  function onHandleChange(year) {
-    let myArray = [...newYears];
-    if (myArray.includes(year)) {
-      setNewYears(myArray.filter((value) => value != year));
-    } else {
-      myArray.push(year);
-      setNewYears(myArray);
-    }
+  function onHandleChange(campus) {
+    setCampus(campus);
+    CityData.filter((data) => {
+      data.cidade.nome === campus && setData(data);
+    });
   }
 
   //=======================================================
@@ -73,8 +58,8 @@ export default function Periodo() {
     };
 
     const newData = {
-      labels: newYears.map((ano) => {
-        return ano;
+      labels: data.dados.map((dado) => {
+        return dado.ano;
       }),
       datasets: data.categorias.map((categ) => {
         return {
@@ -193,56 +178,10 @@ export default function Periodo() {
   }
 
   //=======================================================
-  function renderSelectYearsCard() {
-    return (
-      <Card width={"40%"} name={"Escolha o(s) ano(s):"}>
-        <FormControl fullWidth defaultChecked="2023">
-          <FormGroup row>
-            {years.map((year) => {
-              return (
-                <FormControlLabel
-                  key={year}
-                  value={year}
-                  control={
-                    <Checkbox
-                      defaultChecked
-                      onChange={(value) => {
-                        onHandleChange(value.target.value);
-                      }}
-                    />
-                  }
-                  label={year}
-                />
-              );
-            })}
-          </FormGroup>
-        </FormControl>
-      </Card>
-    );
-  }
-
-  //=======================================================
-  function formatArray(anos) {
-    if (anos.length > 0) {
-      anos.sort();
-
-      let str = anos.slice(0, -1).join(", ");
-
-      if (anos.length > 1) {
-        str += " e ";
-      }
-
-      str += anos[anos.length - 1] + ".";
-
-      return str;
-    }
-  }
-
-  //=======================================================
   function renderTitle() {
     return (
       <>
-        <Title>Indicadores por Campus em {formatArray(newYears)}</Title>
+        <Title>Indicadores de Orientações</Title>
         <div
           style={{
             display: "flex",
@@ -264,9 +203,44 @@ export default function Periodo() {
   }
 
   //=======================================================
+  function renderSelectCampusCard() {
+    return (
+      <Card width={"40%"} name={"Pesquisar"}>
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">
+            Escolha o Campus:
+          </InputLabel>
+          <Select
+            labelId="chooseCampusLabel"
+            id="chooseCampus"
+            label="escolha-o-campus"
+            IconComponent={ExpandMore}
+            defaultChecked="Todos os Campus"
+            onChange={(value) => onHandleChange(value.target.value)}
+            value={campus}
+          >
+            {CityData.map((city) => {
+              return (
+                <MenuItem key={city.cidade.id} value={city.cidade.nome}>
+                  {city.cidade.nome}
+                </MenuItem>
+              );
+            })}
+          </Select>
+        </FormControl>
+      </Card>
+    );
+  }
+
+  //=======================================================
   function renderIndicators() {
     return (
       <div style={{ marginTop: "3rem" }}>
+        <SecondTitle>Indicadores - {campus}</SecondTitle>
+        <ThirdTitle>Número de docentes: {data.totalDocentes}</ThirdTitle>
+        <ThirdTitle>
+          Número de docentes com Lattes: {data.docentesComLattes}
+        </ThirdTitle>
         <div style={{ display: "flex", alignItems: "baseline", gap: "0.5rem" }}>
           <ThirdTitle>Observação: </ThirdTitle>
           <Small>
@@ -327,102 +301,6 @@ export default function Periodo() {
             {renderChart(MediaDocentesxAnos)}
           </Card>
         </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            marginTop: "2rem",
-            gap: "2rem",
-          }}
-        >
-          {/* --------------- Card 3 --------------- */}
-          <Card
-            width="100%"
-            name="Docentes Com Produção Bibliográfica"
-            openInfo={() => toggleModal("openModal2")}
-          >
-            <div style={{ marginBottom: "1rem" }}>
-              <p style={{ marginBottom: "1rem" }}>
-                Quantidade de docentes com no mínimo uma (1) produção
-                bibliográfica.
-              </p>
-              <p style={{ textAlign: "center", marginBottom: "1rem" }}>
-                <strong>Quantidade de Docentes x Anos</strong>
-              </p>
-              <p>
-                Clique no <strong> tipo de produção </strong> para inserir ou
-                remover a seleção:
-              </p>
-            </div>
-            {renderChart(QtdDocentesxAnos)}
-          </Card>
-
-          {/* --------------- Card 4 --------------- */}
-          <Card
-            width="100%"
-            name="Docentes Com Produção Bibliográfica"
-            openInfo={() => toggleModal("openModal2")}
-          >
-            <div style={{ marginBottom: "1rem" }}>
-              <p style={{ marginBottom: "1rem" }}>
-                Percentual de docentes em relação ao campus com no mínimo uma
-                (1) produção bibliográfica.
-              </p>
-              <p style={{ textAlign: "center", marginBottom: "1rem" }}>
-                <strong>Percentual de Docentes x Anos</strong>
-              </p>
-              <p>
-                Clique no <strong> tipo de produção </strong> para inserir ou
-                remover a seleção:
-              </p>
-            </div>
-            {renderChart(PDocentesxAnos)}
-          </Card>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            marginTop: "2rem",
-            gap: "2rem",
-          }}
-        >
-          {/* --------------- Card 5 --------------- */}
-          <Card
-            width="100%"
-            name="Produção Em Periódicos"
-            openInfo={() => toggleModal("openModal3")}
-          >
-            <div style={{ marginBottom: "1rem" }}>
-              <p style={{ textAlign: "center", marginBottom: "1rem" }}>
-                <strong>Quantidade x Anos</strong>
-              </p>
-              <p>
-                Clique no <strong>Estrato</strong> para inserir ou remover a
-                seleção:
-              </p>
-            </div>
-            {renderChart(QuantidadexAnosA1)}
-          </Card>
-
-          {/* --------------- Card 6 --------------- */}
-          <Card
-            width="100%"
-            name="Produção Em Periódicos"
-            openInfo={() => toggleModal("openModal3")}
-          >
-            <div style={{ marginBottom: "1rem" }}>
-              <p style={{ textAlign: "center", marginBottom: "1rem" }}>
-                <strong>Média por professor x Anos</strong>
-              </p>
-              <p>
-                Clique no <strong>Estrato</strong> para inserir ou remover a
-                seleção:
-              </p>
-            </div>
-            {renderChart(MProfessorxAnosA1)}
-          </Card>
-        </div>
       </>
     );
   }
@@ -432,7 +310,7 @@ export default function Periodo() {
     <>
       {renderModals()}
       {renderTitle()}
-      {renderSelectYearsCard()}
+      {renderSelectCampusCard()}
       {renderIndicators()}
       {renderDataCards()}
     </>

@@ -80,7 +80,7 @@ export default memo(function Home() {
             >
               <Card image={OBS} name="Observatório">
                 <p style={{ textAlign: "justify" }}>
-                  {text1} <Link to="sobre">clique aqui</Link>.
+                  {text1} <Link to="/observatorioiftm/sobre">clique aqui</Link>.
                 </p>
               </Card>
               <Card image={IFTM} name="IFTM">
@@ -108,7 +108,7 @@ export default memo(function Home() {
             </Card>
             <Card name="Entre em Contato">
               <p style={{ textAlign: "justify" }}>
-                {text4} <Link to="sobre">clique aqui</Link>.
+                {text4} <Link to="/observatorioiftm/sobre">clique aqui</Link>.
               </p>
             </Card>
           </div>

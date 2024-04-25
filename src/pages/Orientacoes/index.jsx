@@ -1,12 +1,53 @@
-import React from "react";
-import { Container } from "../../styles/styled-components";
+import React, { useState } from "react";
+import { Container, Hr } from "../../styles/styled-components";
+import Card from "../../components/Card";
+import Campus from "./Campus";
+import Periodo from "./Periodo";
+import {
+  FormControl,
+  FormControlLabel,
+  RadioGroup,
+  Radio,
+} from "@mui/material";
 
-// import styles from './index.module.css';
-
-export default function Orientacoes() {
+export default function ProducaoBibliografica() {
+  const [opcao, setOpcao] = useState("campus");
   return (
     <Container>
-      <h1>Orientacoes</h1>
+      <div
+        style={{
+          width: "100%",
+          marginBottom: "1rem",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Card name={"Selecione o tipo de consulta:"} width={"75%"}>
+          <FormControl>
+            <RadioGroup
+              row
+              defaultValue="campus"
+              onChange={(option) => setOpcao(option.target.value)}
+            >
+              <FormControlLabel
+                value="campus"
+                control={<Radio />}
+                label="Campus"
+              />
+              <FormControlLabel
+                value="periodo"
+                control={<Radio />}
+                label="Período"
+              />
+            </RadioGroup>
+          </FormControl>
+        </Card>
+      </div>
+      <Hr />
+      <div style={{ width: "100%" }}>
+        {opcao === "campus" && <Campus />}
+        {opcao === "periodo" && <Periodo />}
+      </div>
     </Container>
   );
 }

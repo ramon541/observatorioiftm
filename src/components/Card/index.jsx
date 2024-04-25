@@ -41,7 +41,10 @@ export default function Card({
           <ButtonIcon onClick={openInfo} icon={"fa-circle-question"} />
         )}
       </div>
-      <CentralContainer justifyContent={justifyLeft ? "flex-start" : null}>
+      <CentralContainer
+        justifyContent={justifyLeft ? "flex-start" : null}
+        alignItems={justifyLeft ? "flex-start" : null}
+      >
         {children}
       </CentralContainer>
     </CardContainer>

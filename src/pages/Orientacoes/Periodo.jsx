@@ -8,23 +8,12 @@ import {
   FormGroup,
 } from "@mui/material";
 import { Chart } from "primereact/chart";
-import {
-  getMediaDocxAnos,
-  getMediaProfxAnosA1,
-  getPercentDocentesxAnos,
-  getQtdDocentesxAnos,
-  getQtdxAnos,
-  getQtdxAnosA1,
-} from "../../db";
+import { getMediaDocxAnos, getQtdxAnos } from "../../db";
 import Modal from "../../components/Modal";
 
 export default function Periodo() {
   const { QuantidadexAnos } = getQtdxAnos();
   const { MediaDocentesxAnos } = getMediaDocxAnos();
-  const { QtdDocentesxAnos } = getQtdDocentesxAnos();
-  const { PDocentesxAnos } = getPercentDocentesxAnos();
-  const { QuantidadexAnosA1 } = getQtdxAnosA1();
-  const { MProfessorxAnosA1 } = getMediaProfxAnosA1();
 
   const years = ["2017", "2018", "2019", "2020", "2021", "2022", "2023"];
   const [newYears, setNewYears] = useState([...years]);
@@ -242,7 +231,9 @@ export default function Periodo() {
   function renderTitle() {
     return (
       <>
-        <Title>Indicadores por Campus em {formatArray(newYears)}</Title>
+        <Title>
+          Indicadores de Orientações dos Campi em {formatArray(newYears)}
+        </Title>
         <div
           style={{
             display: "flex",
@@ -325,102 +316,6 @@ export default function Periodo() {
               </p>
             </div>
             {renderChart(MediaDocentesxAnos)}
-          </Card>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            marginTop: "2rem",
-            gap: "2rem",
-          }}
-        >
-          {/* --------------- Card 3 --------------- */}
-          <Card
-            width="100%"
-            name="Docentes Com Produção Bibliográfica"
-            openInfo={() => toggleModal("openModal2")}
-          >
-            <div style={{ marginBottom: "1rem" }}>
-              <p style={{ marginBottom: "1rem" }}>
-                Quantidade de docentes com no mínimo uma (1) produção
-                bibliográfica.
-              </p>
-              <p style={{ textAlign: "center", marginBottom: "1rem" }}>
-                <strong>Quantidade de Docentes x Anos</strong>
-              </p>
-              <p>
-                Clique no <strong> tipo de produção </strong> para inserir ou
-                remover a seleção:
-              </p>
-            </div>
-            {renderChart(QtdDocentesxAnos)}
-          </Card>
-
-          {/* --------------- Card 4 --------------- */}
-          <Card
-            width="100%"
-            name="Docentes Com Produção Bibliográfica"
-            openInfo={() => toggleModal("openModal2")}
-          >
-            <div style={{ marginBottom: "1rem" }}>
-              <p style={{ marginBottom: "1rem" }}>
-                Percentual de docentes em relação ao campus com no mínimo uma
-                (1) produção bibliográfica.
-              </p>
-              <p style={{ textAlign: "center", marginBottom: "1rem" }}>
-                <strong>Percentual de Docentes x Anos</strong>
-              </p>
-              <p>
-                Clique no <strong> tipo de produção </strong> para inserir ou
-                remover a seleção:
-              </p>
-            </div>
-            {renderChart(PDocentesxAnos)}
-          </Card>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            marginTop: "2rem",
-            gap: "2rem",
-          }}
-        >
-          {/* --------------- Card 5 --------------- */}
-          <Card
-            width="100%"
-            name="Produção Em Periódicos"
-            openInfo={() => toggleModal("openModal3")}
-          >
-            <div style={{ marginBottom: "1rem" }}>
-              <p style={{ textAlign: "center", marginBottom: "1rem" }}>
-                <strong>Quantidade x Anos</strong>
-              </p>
-              <p>
-                Clique no <strong>Estrato</strong> para inserir ou remover a
-                seleção:
-              </p>
-            </div>
-            {renderChart(QuantidadexAnosA1)}
-          </Card>
-
-          {/* --------------- Card 6 --------------- */}
-          <Card
-            width="100%"
-            name="Produção Em Periódicos"
-            openInfo={() => toggleModal("openModal3")}
-          >
-            <div style={{ marginBottom: "1rem" }}>
-              <p style={{ textAlign: "center", marginBottom: "1rem" }}>
-                <strong>Média por professor x Anos</strong>
-              </p>
-              <p>
-                Clique no <strong>Estrato</strong> para inserir ou remover a
-                seleção:
-              </p>
-            </div>
-            {renderChart(MProfessorxAnosA1)}
           </Card>
         </div>
       </>
