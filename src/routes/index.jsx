@@ -8,7 +8,6 @@ import ProducaoBibliografica from "../pages/ProducaoBibliografica";
 import Orientacoes from "../pages/Orientacoes";
 import Inovacao from "../pages/Inovacao";
 import FormacaoAcademica from "../pages/FormacaoAcademica";
-import TemasDePesquisa from "../pages/TemasDePesquisa";
 import ConsultaNome from "../pages/ConsultaNome";
 import ConsultaTemasPesquisa from "../pages/ConsultaTemasPesquisa";
 import ProducaoCientifica from "../pages/ProducaoCientifica";
@@ -40,10 +39,6 @@ const routes = createBrowserRouter([
       {
         path: "formacaoacademica",
         element: <FormacaoAcademica />,
-      },
-      {
-        path: "temasdepesquisa",
-        element: <TemasDePesquisa />,
       },
       {
         path: "consultanome",

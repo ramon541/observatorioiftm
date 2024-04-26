@@ -39,12 +39,6 @@ export default function Menu() {
           menus: null,
           route: "formacaoacademica",
         },
-        {
-          label: "Temas de Pesquisa",
-          icon: "fa-comments",
-          menus: null,
-          route: "temasdepesquisa",
-        },
       ],
       route: null,
     },
